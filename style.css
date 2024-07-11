@@ -1,0 +1,345 @@
+* {
+    font-family: "Kode Mono", monospace;
+    font-weight: 600;
+    font-size: 1.4em;
+}
+
+:root {
+    --color-primario: #0A3871;
+    --color-secundario: ; 
+}
+
+
+main {
+    display: flex;
+}
+
+body {
+    background-color: var(--color-secundario); /* Color de fondo */
+    background-image: url('./imagenes/fondo.jpg'); /* Imagen de fondo */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+ 
+
+.logo {
+    margin: 20px 0 0;
+    width: 40%;
+}
+
+.campo-izquierdo {
+    width: 52%;
+    height: 90vh;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    right: -120px;
+}
+
+.campo-encriptado {
+    width: 98%;
+    margin: 40px 0 0px;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.texto-encriptado {
+    padding: 5px;
+    margin: 5px 5px;
+    width: 98%;
+    height: 90%;
+    vertical-align: middle;
+    border-radius: 10px;
+    resize: none;
+    background: var(--color-secundario);
+    color: var(--color-primario);
+    outline: none;
+    text-transform: lowercase;
+    border: none;
+}
+
+.texto-encriptado::placeholder {
+    color: var(--color-primario);
+}
+
+
+.informativo {
+    font-style: italic;
+    text-align: left;
+    padding-left: 5px;
+    font-size: 22px;
+
+}
+
+.boton {
+    text-align: left;
+    margin: 5% 0 0;
+}
+
+.boton__Encriptar:hover,
+.boton__Desencriptar:hover {
+    transform: scale(1.05);
+}
+
+.boton__Encriptar {
+    background: var(--color-primario);
+    color: white;
+    font-size: 22px;
+    height: 67px;
+    width: 328px;
+    border-radius: 30px;
+    border: none;
+    margin: 0px 20px 10px 0;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.boton__Desencriptar {
+    background: #D8DFE8;
+    color: var(--color-primario);
+    font-size: 22px;
+    height: 67px;
+    width: 328px;
+    border-radius: 30px;
+    border: 1px solid var(--color-primario);
+    vertical-align: top;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.campo-desencriptado {
+    margin: 20px 7%;
+    width: 30%;
+    height: 90vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: white;
+    border-radius: 30px;
+}
+
+.texto-mensaje {
+    color: var(--color-primario);
+    padding: 20px;
+    width: 98%;
+    height: 88%;
+    border-radius: 30px;
+    vertical-align: top;
+    border: none;
+    resize: none;
+    outline: none;
+    box-sizing: border-box;
+    background-image: url("imagenes/Muñeco.png");
+    background-repeat: no-repeat;
+    background-position: 50% 40%;
+}
+
+.texto-mensaje::placeholder {
+    position: absolute;
+    bottom: 10%;
+    text-align: center;
+}
+
+.boton__CampoCopiar {
+    text-align: center;
+    margin-top: 4%;
+}
+
+.boton__Copiar:hover {
+    transform: scale(1.1);
+}
+
+.boton__Copiar {
+    display: none;
+    font-size: 22px;
+    width: 60%;
+    height: 7vh;
+    border-radius: 30px;
+    border: 1px solid var(--color-primario);
+    color: var(--color-primario);
+    background: white;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+#advertencia {
+    text-align: center;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ff9999;
+    padding: 30px 30px;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#button_close:hover {
+    transform: scale(1.2);
+    font-weight: bold;
+}
+
+#button_close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    text-align: left;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+/* -----------------   MEDIAS QUERIES  -------------- */
+
+@media screen and (max-width:1325px) {
+
+    .boton {
+        text-align: center;
+    }
+
+    .boton__Encriptar {
+        margin: 0 0 10px 0;
+    }
+
+    .boton__Desencriptar {
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width:1024px) {
+
+    .campo-izquierdo {
+        right: -30px;
+    }
+
+    .campo-desencriptado {
+        width: 40%;
+        margin: 20px 10px;
+    }
+}
+
+@media screen and (max-width:799px) {
+
+    main {
+        display: block;
+    }
+
+    .campo-encriptado {
+        margin-top: 5px;
+    }
+
+    .campo-izquierdo {
+        width: 90%;
+        height: 50vh;
+        position: relative;
+        right: -50px;
+        display: block;
+    }
+
+    .boton{
+        margin: 1% 0 0;
+    }
+
+    .boton__Encriptar,
+    .boton__Desencriptar {
+        margin-top: 20px;
+        width: 200px;
+        height: 50px;
+    }
+
+    .boton__Copiar {
+        width: 600px;
+        height: 45px;
+    }
+
+    .campo-desencriptado {
+        width: 87%;
+        height: 10vh;
+        position: relative;
+        right: -50px;
+        margin: 0 0 5px;
+        top: 0vh;
+    }
+
+    .texto-mensaje::placeholder {
+        right: 50px;
+    }
+
+    .texto-mensaje {
+        height: 78%;
+        background-image: none;
+    }
+
+    .boton__CampoCopiar {
+        margin-top: 0;
+    }
+
+    #button_close:hover {
+        transform: scale(1.2);
+        font-weight: bold;
+    }
+
+    #button_close {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1.2em;
+        text-align: left;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+    #advertencia {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width:480px) {
+
+    * {
+        font-size: 1.2em;
+    }
+
+    .logo {
+        margin: 10px 0 0;
+        width: auto;
+        text-align: center;
+    }
+
+    .campo-izquierdo {
+        right: auto;
+    }
+
+    .boton__Desencriptar, .boton__Encriptar {
+        margin-top: 0px;
+    }
+
+    .campo-desencriptado {
+        right: auto;
+        margin: 0 5%;
+        top: 55px;
+    }
+
+    .texto-mensaje::placeholder {
+        right: 0px;
+        top: 10px;
+    }
+
+    .boton__Copiar {
+        width: 300px;
+    }
+
+    @media screen and (min-height: 900px) {
+
+
+    
+    
+    }    
+}
